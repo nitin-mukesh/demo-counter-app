@@ -13,6 +13,12 @@ pipeline{
                     git branch: 'main', url: 'https://github.com/nitin-mukesh/demo-counter-app.git'
                 }
             }
+            stage('unit testing'){
+            
+            steps{  
+                    sh 'mvn test'
+                }
+            }
         }
     }
 }
