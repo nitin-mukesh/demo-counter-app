@@ -6,19 +6,16 @@ pipeline{
         
         stage('Git Checkout'){
             
-            steps{
-                
-                script{
-                    
+            steps{                    
                     git branch: 'main', url: 'https://github.com/nitin-mukesh/demo-counter-app.git'
                 }
             }
-            stage('unit testing'){
+         stage('unit testing'){
             
             steps{  
                     sh 'mvn test'
                 }
             }
-        }
+        
     }
 }
